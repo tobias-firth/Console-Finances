@@ -86,3 +86,36 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// console.table(finances);
+// console.log(finances[12][1])
+
+
+// Store value of total months
+console.log("Total Months: " + finances.length);
+
+// Store profits in seperate array
+
+var profits = []
+
+for (let i=0; i<finances.length; i++) {
+   profits.push(finances[i][1]);
+}
+
+// console.table(profits);
+
+// Sum together values in profits array
+
+var sum = 0;
+
+for(let i=0; i< profits.length; i++) {
+    sum += profits[i];
+}
+
+console.log("Net total amount: $" + sum)
+
+// Calculate total changes in profits and losses and store
+// calculate avaera changes in profits
+// Find highest value of change in profits
+// find lowest value of chagne in profits
+// display values in console log
