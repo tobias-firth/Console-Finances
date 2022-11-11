@@ -5,4 +5,4 @@ Analyse the financial records for a company. Calcualte the total number of month
 
 ## My Solution
 
-![](../Solution.png)
+![](Solution.png)
