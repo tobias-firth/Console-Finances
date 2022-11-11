@@ -92,7 +92,8 @@ var finances = [
 
 
 // Store value of total months
-console.log("Total Months: " + finances.length);
+
+var totalMonths = finances.length;
 
 // Store profits in seperate array
 
@@ -106,16 +107,59 @@ for (let i=0; i<finances.length; i++) {
 
 // Sum together values in profits array
 
-var sum = 0;
+var sumProfits = 0;
 
 for(let i=0; i< profits.length; i++) {
-    sum += profits[i];
+    sumProfits += profits[i];
 }
 
-console.log("Net total amount: $" + sum)
+// console.log("Net total amount: $" + sumProfits)
 
-// Calculate total changes in profits and losses and store
-// calculate avaera changes in profits
+// Calculate total changes in profits and losses and store in variable change as an array
+
+var change = []
+
+for (let i=1; i<profits.length; i++) {
+    change.push(profits[i] - profits[i-1]);
+}
+
+// console.table(change);
+
+// Calculate average value of change and round to two decimal places
+
+// Calculate sum of values in changes array
+var sumChanges = 0;
+
+for(let i=0; i< change.length; i++) {
+    sumChanges += change[i];
+}
+
+// console.log(sumChanges)
+
+var averageChange = (sumChanges/change.length).toFixed(2)
+
+// console.log("Average Change: $" + averageChange)
+
 // Find highest value of change in profits
+
+var maxChange = Math.max(...change);
+maxIndex = change.indexOf(maxChange);
+
+// console.log(maxChange);
+// console.log(maxIndex);
+
+// console.log("Greatest Increase in Profits: " + finances[maxIndex +=1][0] + " ($" + maxChange + ")");
+
 // find lowest value of chagne in profits
+
+var minChange = Math.min(...change);
+minIndex = change.indexOf(minChange);
+
+// console.log(minChange);
+// console.log(minIndex);
+
+// console.log("Greatest Decrease in Profits: " + finances[minIndex +=1][0] + " ($" + minChange + ")");
+
 // display values in console log
+
+console.log("Total Months: " + totalMonths + "\n" + "Net total amount: $" + sumProfits + "\n" + "Average Change: $" + averageChange + "\n" + "Greatest Increase in Profits: " + finances[maxIndex +=1][0] + " ($" + maxChange + ")" + "\n" + "Greatest Decrease in Profits: " + finances[minIndex +=1][0] + " ($" + minChange + ")");
